@@ -671,13 +671,6 @@ contract RiseUp is Context, IERC20, Ownable {
             takeFee = false;
         }
         
-         if(takeFee) {
-        	uint256 fees = amount.mul(totalFees).div(100);
-
-            // if sell, multiply by 1.2
-            if(automatedMarketMakerPairs[to]) {
-                fees = fees.mul(sellFeeIncreaseFactor).div(100);
-            }
         
         _tokenTransfer(from,to,amount,takeFee);
     }
