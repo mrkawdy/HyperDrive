@@ -1,1 +1,1 @@
-# RiseUp
+# RiseUp - take the power back 💪
