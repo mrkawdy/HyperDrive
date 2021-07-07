@@ -1,12 +1,11 @@
 /*
 
-RiseUp is built upon the fundamentals of Buyback and increasing the investor's value.
+HyperDrive is built upon the fundamentals of Buyback and increasing the investor's value.
     
 The main features are:
     
 1) 2% tax is collected and distributed in the form of static rewards to holders for HODLing.
 2) a combined 9% buyback + marketing tax is collected of which 3% of it is sent for marketing fund and othe 6% is used to buyback the tokens.
-3) sells have fees of 13.5% and 3% (9 * 1.5 and 2 * 1.5) this discourages swing trading and other price manipulation tactics. 
 
 */
 
@@ -420,7 +419,7 @@ interface IUniswapV2Router02 is IUniswapV2Router01 {
     ) external;
 }
 
-contract RiseUp is Context, IERC20, Ownable {
+contract HyperDrive is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
     
@@ -440,8 +439,8 @@ contract RiseUp is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "RiseUpTest1";
-    string private _symbol = "RiseUpT1";
+    string private _name = "HyperDrivetest3";
+    string private _symbol = unicode"t3⚡";
     uint8 private _decimals = 9;
 
 
@@ -452,9 +451,6 @@ contract RiseUp is Context, IERC20, Ownable {
     uint256 private _previousLiquidityFee = _liquidityFee;
     
     uint256 public marketingDivisor = 3;
-    
-      // sells have fees of 13.5 and 3 (10 * 1.5 and 2 * 1.5)
-    uint256 public immutable sellFeeIncreaseFactor = 150; 
     
     uint256 public _maxTxAmount = 3000000 * 10**6 * 10**9;
     uint256 private minimumTokensBeforeSwap = 200000 * 10**6 * 10**9; 
@@ -670,7 +666,6 @@ contract RiseUp is Context, IERC20, Ownable {
         if(_isExcludedFromFee[from] || _isExcludedFromFee[to]){
             takeFee = false;
         }
-        
         
         _tokenTransfer(from,to,amount,takeFee);
     }
