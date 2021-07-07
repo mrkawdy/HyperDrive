@@ -1,1 +1,1 @@
-# RiseUp - take the power back 💪
+# HYPERDRIVE - The hyper deflationary faster than light token ⚡
