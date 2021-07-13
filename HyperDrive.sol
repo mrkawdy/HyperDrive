@@ -1,11 +1,16 @@
+/**
+ *Submitted for verification at BscScan.com on 2021-07-07
+*/
+
 /*
 
 HyperDrive is built upon the fundamentals of Buyback and increasing the investor's value.
     
 The main features are:
     
-1) 2% tax is collected and distributed in the form of static rewards to holders for HODLing.
+1) a 2% tax is collected and distributed in the form of static rewards to holders for HODLing.
 2) a combined 9% buyback + marketing tax is collected of which 3% of it is sent for marketing fund and othe 6% is used to buyback the tokens.
+3) an anti-whale function which limits the max transaction amount to 0.3% of the supply.
 
 */
 
@@ -423,7 +428,7 @@ contract HyperDrive is Context, IERC20, Ownable {
     using SafeMath for uint256;
     using Address for address;
     
-    address payable public marketingAddress = payable(0x83ED7923b8eeC56cBC4ACF989FA4bB2E100da382); // Marketing Address
+    address payable public marketingAddress = payable(0xD244e9eBD607B67b224edf79004Eb830BDdE747D); // Marketing Address
     address public immutable deadAddress = 0x000000000000000000000000000000000000dEaD;
     mapping (address => uint256) private _rOwned;
     mapping (address => uint256) private _tOwned;
@@ -439,8 +444,8 @@ contract HyperDrive is Context, IERC20, Ownable {
     uint256 private _rTotal = (MAX - (MAX % _tTotal));
     uint256 private _tFeeTotal;
 
-    string private _name = "HyperDrivetest3";
-    string private _symbol = unicode"t3⚡";
+    string private _name = "HyperDrive";
+    string private _symbol = "HYPERDRIVE";
     uint8 private _decimals = 9;
 
 
